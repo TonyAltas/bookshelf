@@ -9,6 +9,9 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var search = require('./routes/search');
 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/bookshelf');
+
 var app = express();
 
 // view engine setup
