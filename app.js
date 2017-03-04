@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var search = require('./routes/search');
+var books = require('./routes/book');
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/bookshelf');
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/', books);
 app.use('/', search);
 
 // catch 404 and forward to error handler
